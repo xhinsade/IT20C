@@ -22,6 +22,11 @@ public class Simple_Implementation {
            Orange
            Apple */
         
+        int [] numValue = {90, 32, 56,98,100};
+         
+        System.out.println(numValue.length);
+        
+        
     }
     
 }

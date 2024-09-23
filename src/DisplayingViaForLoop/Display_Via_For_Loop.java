@@ -13,10 +13,10 @@ public class Display_Via_For_Loop {
 
             //output
             /*Lilith
-           Mavis
-           Luffy
-            Ace
-            Zoro */
+             Mavis
+             Luffy
+             Ace
+             Zoro */
         }
     }
 
