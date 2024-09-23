@@ -31,9 +31,23 @@ public class Simple_Implementation {
         //output
         //The number inside the array is : 5
         
+        ////declaring numbers inside array"
         int [] num = {2,8,12,16,20};
         
-        System.out.println(num[1] + num[2]);
+        //procedure
+        System.out.println("Sum : " + (num[1] + num[2]));
+        System.out.println("Difference : " + (num[3] - num[2]));
+        System.out.println("Product : " + (num[1] * num[2]));
+        System.out.println("Quotient : " + (num[3] / num[2]));
+        
+        //output
+        /*
+        Sum : 20
+        Difference : 4
+        Product : 96
+        Quotient : 1
+        
+        */
     }
     
 }
