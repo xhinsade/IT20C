@@ -28,7 +28,30 @@ public class Multidimentional_Array {
         Israel lgre45eq  
         Justine ldssu635 
         */
-
         
+        char [][] icon = {
+            {'0','*','0','*','0','*','0'},
+            {'*','0','*','0','*','0','*'},
+            {'*','*','*','0','*','*','*'},
+            {'0','-','*','*','*','-','0'},
+            {'*','*','-','-','-','*','*'},
+             };
+        
+        
+         for (int p = 0; p < icon.length; p++) {
+            for (int m = 0; m < icon[p].length; m++) {
+
+                System.out.print(icon[p][m] + " ");
+            }
+            System.out.println(" ");
+         }
+           /*
+         0 * 0 * 0 * 0  
+         * 0 * 0 * 0 *  
+         * * * 0 * * *  
+         0 - * * * - 0  
+         * * - - - * *  
+         */
     }
 }
+   
