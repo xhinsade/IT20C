@@ -30,6 +30,10 @@ public class Simple_Implementation {
         
         //output
         //The number inside the array is : 5
+        
+        int [] num = {2,8,12,16,20};
+        
+        System.out.println(num[1] + num[2]);
     }
     
 }
