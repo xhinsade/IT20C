@@ -22,11 +22,14 @@ public class Simple_Implementation {
            Orange
            Apple */
         
+        //declaring numbers inside array"
         int [] numValue = {90, 32, 56,98,100};
-         
-        System.out.println(numValue.length);
         
+         //procedure
+        System.out.println("The number inside the array is : " + numValue.length);
         
+        //output
+        //The number inside the array is : 5
     }
     
 }
