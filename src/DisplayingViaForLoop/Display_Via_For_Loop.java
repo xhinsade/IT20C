@@ -18,6 +18,23 @@ public class Display_Via_For_Loop {
              Ace
              Zoro */
         }
+        
+        ////declaring variable to the array 
+        int [] num = {12,16,20,36,42};
+        
+         //procedure to print the numbers inside the array
+        for (int r = 0; r < num.length; r++ ){
+            System.out.println((num[r] ));
+            
+            /* 
+            12
+            16
+            20
+            36
+            42
+            */ 
+        }
     }
 
 }
+
