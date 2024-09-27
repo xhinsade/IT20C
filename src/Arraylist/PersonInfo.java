@@ -37,7 +37,14 @@ class PersonInfo {
     }
     
 
-    
+    public String findInfo(String searchInfo) {
+        for (String detail : info) {
+            if (detail.contains(searchInfo)) {
+                return detail;
+            }
+        }
+        return null;
+    }
 
     public int getInfoIndex(String searchInfo) {
         for (int i = 0; i < info.size(); i++) {
@@ -47,4 +54,6 @@ class PersonInfo {
         }
         return -1;
     }
+
+
 }

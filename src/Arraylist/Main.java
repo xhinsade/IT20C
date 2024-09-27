@@ -36,5 +36,35 @@ public class Main {
         infoList.InsertInfo(name, age, gender, address, number);
         infoList.DisplayPersonInfo();
         
+        boolean continueOperations = true;
+        while (continueOperations) {
+            System.out.println("\nWhat would you like to do?");
+            System.out.println("1. Find information");
+            System.out.println("2. Update information");
+            System.out.println("3. Delete information");
+            System.out.println("4. Exit");
+
+            int choice = sc.nextInt();
+            sc.nextLine();
+            
+            
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter the information you want to find (ex. Name, Age, Gender, Address, Phone Number): ");
+                    String searchTerm = sc.nextLine();
+                    String foundInfo = infoList.findInfo(searchTerm);
+
+                    if (foundInfo != null) {
+                        System.out.println("Found: " + foundInfo);
+                    } else {
+                        System.out.println("Information not found.");
+                    }
+                    break;
+                
+
+              
+        
+            }
+        }
     }
 }
