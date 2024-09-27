@@ -62,8 +62,22 @@ public class Main {
                     break;
                 
 
-              
-        
+                case 2:
+                    System.out.println("Enter the information you want to update (ex.  Name, Age, Gender, Address, Phone Number): ");
+                    String searchInfo = sc.nextLine();
+                    int indexToUpdate = infoList.getInfoIndex(searchInfo);
+
+                    if (indexToUpdate != -1) {
+                        System.out.println("Enter the new information: ");
+                        String newInfo = sc.nextLine();
+                        infoList.updateInfo(indexToUpdate, newInfo);
+                        infoList.DisplayPersonInfo();  
+                    } else {
+                        System.out.println("Information not found.");
+                    }
+                    break;
+                
+
             }
         }
     }

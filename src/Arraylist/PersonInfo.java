@@ -54,6 +54,25 @@ class PersonInfo {
         }
         return -1;
     }
+public void updateInfo(int index, String newInfo) {
+    if (index >= 0 && index < info.size()) {
+        String currentInfo = info.get(index);
+        
+       
+        String[] parts = currentInfo.split(": ", 2);
+        String updatedInfo = parts[0] + ": " + newInfo; 
+        
+        System.out.println("Are you sure you want to update " + currentInfo + " to " + updatedInfo + "? (yes/no)");
+        String confirmation = sc.nextLine();
 
-
+        if (confirmation.equalsIgnoreCase("yes")) {
+            info.set(index, updatedInfo);
+            System.out.println("Updated: " + currentInfo + " to " + updatedInfo);
+        } else {
+            System.out.println("Update canceled.");
+        }
+    } else {
+        System.out.println("Index out of bounds");
+    }
+  }
 }
