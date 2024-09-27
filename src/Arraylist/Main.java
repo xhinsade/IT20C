@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        
+        //Scanner: Allowing the user to input text
         Scanner sc = new Scanner(System.in);
         PersonInfo infoList = new PersonInfo();
 
@@ -36,6 +38,8 @@ public class Main {
         infoList.InsertInfo(name, age, gender, address, number);
         infoList.DisplayPersonInfo();
         
+        
+        //While Loop: Use to return the Question after Asking the User
         boolean continueOperations = true;
         while (continueOperations) {
             System.out.println("\nWhat would you like to do?");
@@ -47,8 +51,9 @@ public class Main {
             int choice = sc.nextInt();
             sc.nextLine();
             
-            
+            //Procedure: For User to Find, Update, Delete
             switch (choice) {
+                //Finding User Information
                 case 1:
                     System.out.println("Enter the information you want to find (ex. Name, Age, Gender, Address, Phone Number): ");
                     String searchTerm = sc.nextLine();
@@ -62,6 +67,7 @@ public class Main {
                     break;
                 
 
+                    //Updating the User Information
                 case 2:
                     System.out.println("Enter the information you want to update (ex.  Name, Age, Gender, Address, Phone Number): ");
                     String searchInfo = sc.nextLine();
@@ -76,6 +82,8 @@ public class Main {
                         System.out.println("Information not found.");
                     }
                     break;
+                    
+                    //Deleting the User Information
                 case 3:
                     System.out.println("Enter the information you want to delete (ex. Name, Age, Gender, Address, Phone Number): ");
                     searchInfo = sc.nextLine();  
@@ -89,6 +97,7 @@ public class Main {
                     }
                     break;
 
+                    //To Exit
                 case 4:
                     continueOperations = false;
                     System.out.println("Exiting...");

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Arraylist;
 
 import java.util.ArrayList;
@@ -20,6 +16,7 @@ class PersonInfo {
      
     Scanner sc = new Scanner(System.in);
 
+    //Display the Information After Filling In
     public void DisplayPersonInfo() {
         System.out.println("Your Information : ");
         System.out.println("---------------------");
@@ -28,6 +25,7 @@ class PersonInfo {
         }
     }
 
+    //Method For the Inserted User input 
     public void InsertInfo(String name, int age, String gender, String address, String number) {
         info.add("Name: " + name);
         info.add("Age: " + age);
@@ -37,6 +35,7 @@ class PersonInfo {
     }
     
 
+    //Method For Finding the Information
     public String findInfo(String searchInfo) {
         for (String detail : info) {
             if (detail.contains(searchInfo)) {
@@ -46,6 +45,7 @@ class PersonInfo {
         return null;
     }
 
+    //Method For Getting the Index When Finding The Information
     public int getInfoIndex(String searchInfo) {
         for (int i = 0; i < info.size(); i++) {
             if (info.get(i).contains(searchInfo)) {
@@ -54,6 +54,8 @@ class PersonInfo {
         }
         return -1;
     }
+    
+    //Method For Updating User Information
 public void updateInfo(int index, String newInfo) {
     if (index >= 0 && index < info.size()) {
         String currentInfo = info.get(index);
@@ -76,6 +78,7 @@ public void updateInfo(int index, String newInfo) {
     }
 }
 
+    //Method For Deleting the User Information
 
     public void deleteInfo(int index) {
     if (index >= 0 && index < info.size()) {
