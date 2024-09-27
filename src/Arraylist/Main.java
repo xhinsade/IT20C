@@ -76,9 +76,30 @@ public class Main {
                         System.out.println("Information not found.");
                     }
                     break;
-                
+                case 3:
+                    System.out.println("Enter the information you want to delete (ex. Name, Age, Gender, Address, Phone Number): ");
+                    searchInfo = sc.nextLine();  
+                    int indexToDelete = infoList.getInfoIndex(searchInfo);
 
+                    if (indexToDelete != -1) {
+                        infoList.deleteInfo(indexToDelete);
+                        infoList.DisplayPersonInfo();  
+                    } else {
+                        System.out.println("Information not found.");
+                    }
+                    break;
+
+                case 4:
+                    continueOperations = false;
+                    System.out.println("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("You have input invalid key, Please try Again.");
+                    break;
             }
         }
+        
+        
     }
 }

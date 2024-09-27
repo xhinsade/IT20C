@@ -74,5 +74,29 @@ public void updateInfo(int index, String newInfo) {
     } else {
         System.out.println("Index out of bounds");
     }
-  }
+}
+
+
+    public void deleteInfo(int index) {
+    if (index >= 0 && index < info.size()) {
+        String removedInfo = info.get(index);
+
+        System.out.println("Are you sure you want to delete " + removedInfo + "? (yes/no)");
+        String confirmation = sc.nextLine();
+
+        if (confirmation.equalsIgnoreCase("yes")) {
+            info.remove(index);
+            System.out.println("Deleted: " + removedInfo);
+
+            
+            for (int i = index; i < info.size(); i++) {
+                
+            }
+        } else {
+            System.out.println("Deletion canceled.");
+        }
+    } else {
+        System.out.println("Invalid index.");
+    }
+}
 }
