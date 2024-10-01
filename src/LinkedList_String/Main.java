@@ -16,7 +16,7 @@ public class Main {
     list.add(" Lil Kasalanan - Hev Abi");
     list.add(" Walang Alam -  Hev Abi");
     
-    boolean running = true;
+     boolean running = true;
         while (running) {
             System.out.println("\nCurrent Music List:");
             System.out.println("----------------------------");
@@ -26,10 +26,10 @@ public class Main {
             System.out.println("1. Add a song");
             System.out.println("2. Delete a song");
             System.out.println("3. Move a song");
-            System.out.println("4. Exit");
+            System.out.println("4. Swap two songs");
+            System.out.println("5. Exit");
+            System.out.println(" Enter Your Choice: ");
             int choice = sc.nextInt();
-            
-            System.out.println( );
             sc.nextLine(); 
             
             switch (choice) {
@@ -60,13 +60,22 @@ public class Main {
                     System.out.println("Song moved.");
                     break;
                 case 4:
+                    System.out.print("Enter the index of the first song to swap: ");
+                    int index1 = sc.nextInt();
+                    System.out.print("Enter the index of the second song to swap: ");
+                    int index2 = sc.nextInt();
+                    list.swapNodes(index1, index2);
+                    System.out.println("Songs swapped.");
+                    break;
+                case 5:
                     running = false;
                     break;
                 default:
                     System.out.println("Invalid option. Please try again.");
             }
         }
-
+        
+        sc.close();
         System.out.println("Goodbye!");
     }
 }
