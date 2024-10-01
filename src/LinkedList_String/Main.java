@@ -23,5 +23,7 @@ public class Main {
     
     System.out.println(" Current Music List");
     System.out.println(" ---------------------------- ");
+    
+    list.ShowList();
     }
 }
