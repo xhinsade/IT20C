@@ -54,4 +54,42 @@ public class LinkedList {
         }
     }
 
+    public void moveNodePointer(int  currentIndex, int newIndex){
+        if (head == null || currentIndex == newIndex) return;
+        
+        Node current = head;
+        Node prev = null;
+        Node movingNode = null;
+        Node movingPrev = null;
+        
+        for (int i = 0; current != null && i < currentIndex; i++){
+            movingPrev = prev;
+            prev = current;
+            current = current.next;
+        }
+        movingNode = current;
+        
+        if (movingNode == null) return;
+        
+        if (movingPrev != null){
+            movingPrev.next = movingNode.next;   
+        } else {
+            head = movingNode.next;
+        }
+        
+        current = head;
+        prev = null;
+        for (int i = 0; current != null && i < newIndex; i++){
+        prev = current;
+        current = current.next;
+    }
+        if (prev != null){
+            movingNode.next = current;
+            prev.next = movingNode;
+        } else {
+            movingNode.next = head;
+            head = movingNode;
+        }
+        
+    }
 }

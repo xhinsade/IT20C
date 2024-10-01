@@ -32,5 +32,12 @@ public class Main {
     System.out.println(" ---------------------------- ");
     
     list.ShowList();
+    
+    System.out.println(" Moving/ Swapping node from index to index 0");
+    System.out.println(" Current Music List");
+    System.out.println(" ---------------------------- ");
+    
+    list.moveNodePointer(0, 1);
+    list.ShowList();
     }
 }
