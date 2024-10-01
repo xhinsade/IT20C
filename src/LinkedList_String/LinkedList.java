@@ -36,11 +36,11 @@ public class LinkedList {
         System.out.println(" null ");
     }
     
-    public void DeleteList( String value){
+    public void deleteByValue( String value){
         
         if(head == null) return;
         
-        if(head.next.data.equals(value)){
+        if(head.data.equals(value)){
             head = head.next;
             return; 
         }
@@ -53,4 +53,5 @@ public class LinkedList {
         current = current.next;
         }
     }
+
 }

@@ -26,7 +26,11 @@ public class Main {
     
     list.ShowList();
     
-    list.DeleteList(" Agora Hills - Doja Cat");
+    list.deleteByValue(" Agora Hills - Doja Cat");
     System.out.println( );
+    System.out.println(" Current Music List");
+    System.out.println(" ---------------------------- ");
+    
+    list.ShowList();
     }
 }
