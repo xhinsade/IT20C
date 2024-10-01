@@ -25,5 +25,8 @@ public class Main {
     System.out.println(" ---------------------------- ");
     
     list.ShowList();
+    
+    list.DeleteList(" Agora Hills - Doja Cat");
+    System.out.println( );
     }
 }
