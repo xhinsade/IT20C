@@ -1,37 +1,37 @@
-
 package LinkedList_String;
 
 import java.util.Scanner;
 
 public class Main {
-    
-    public static void main(String [] args){
-    LinkedList list = new LinkedList();
-    Scanner sc = new Scanner(System.in);
-    
-    list.add(" Agora Hills - Doja Cat");
-    list.add(" Fantasize - Ariana Grande");
-    list.add(" Sining - Dionela ft. Jay R");
-    list.add(" Sugar - Florida");
-    list.add(" Lil Kasalanan - Hev Abi");
-    list.add(" Walang Alam -  Hev Abi");
-    
-     boolean running = true;
+
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        Scanner sc = new Scanner(System.in);
+
+        // Adding initial songs
+        list.add("Agora Hills");
+        list.add("Fantasize");
+        list.add("Sining");
+        list.add("Sugar");
+        list.add("Lil Kasalanan");
+        list.add("Walang Alam");
+
+        boolean running = true;
         while (running) {
             System.out.println("\nCurrent Music List:");
             System.out.println("----------------------------");
             list.ShowList();
+
             System.out.println("----------------------------");
             System.out.println("Choose an option:");
             System.out.println("1. Add a song");
             System.out.println("2. Delete a song");
-            System.out.println("3. Move a song");
-            System.out.println("4. Swap two songs");
-            System.out.println("5. Exit");
-            System.out.println(" Enter Your Choice: ");
+            System.out.println("3. Move or Swap a song");
+            System.out.println("4. Exit");
+            System.out.print("Enter Your Choice: ");
             int choice = sc.nextInt();
-            sc.nextLine(); 
-            
+            sc.nextLine();
+
             switch (choice) {
                 case 1:
                     System.out.print("Enter the song title to add: ");
@@ -39,6 +39,7 @@ public class Main {
                     list.add(songToAdd);
                     System.out.println("Song added.");
                     break;
+
                 case 2:
                     System.out.print("Enter the song title to delete: ");
                     String songToDelete = sc.nextLine();
@@ -51,30 +52,28 @@ public class Main {
                         System.out.println("Deletion canceled.");
                     }
                     break;
-                case 3:
-                    System.out.print("Enter the current index of the song to move: ");
-                    int currentIndex = sc.nextInt();
-                    System.out.print("Enter the new index for the song: ");
-                    int newIndex = sc.nextInt();
-                    list.moveNodePointer(currentIndex, newIndex);
-                    System.out.println("Song moved.");
-                    break;
-                case 4:
-                    System.out.print("Enter the index of the first song to swap: ");
+
+                case 3: // Move or Swap
+                    System.out.print("Enter the first index: ");
                     int index1 = sc.nextInt();
-                    System.out.print("Enter the index of the second song to swap: ");
+                    System.out.print("Enter the second index: ");
                     int index2 = sc.nextInt();
-                    list.swapNodes(index1, index2);
-                    System.out.println("Songs swapped.");
+                    System.out.print("Do you want to swap? (yes/no): ");
+                    String confirm = sc.next();
+                    boolean swap = confirm.equalsIgnoreCase("yes");
+                    list.moveOrSwapNodes(index1, index2, swap);
+                    System.out.println(swap ? "Songs swapped." : "Song moved.");
                     break;
-                case 5:
+
+                case 4:
                     running = false;
                     break;
+
                 default:
                     System.out.println("Invalid option. Please try again.");
             }
         }
-        
+
         sc.close();
         System.out.println("Goodbye!");
     }
