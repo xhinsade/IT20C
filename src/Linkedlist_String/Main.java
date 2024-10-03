@@ -52,8 +52,22 @@ public class Main {
                         System.out.println("Deletion canceled.");
                     }
                     break;
-             }
-             
+                    
+                case 3: // Move or Swap
+                    System.out.print("Enter the first index: ");
+                    int index1 = sc.nextInt();
+                    System.out.print("Enter the second index: ");
+                    int index2 = sc.nextInt();
+                    System.out.print("Do you want to swap? (yes/no): ");
+                    String confirm = sc.next();
+                    boolean swap = confirm.equalsIgnoreCase("yes");
+                    list.moveOrSwapNodes(index1, index2, swap);
+                    System.out.println(swap ? "Songs swapped." : "Song moved.");
+                    break;
+
+                   
+        
         }
     }
+}
 }
