@@ -40,6 +40,22 @@ public class Main {
                     System.out.println( NumToAdd + " added.");
                     list.printList();
                     break;
+                    
+                     case 2:
+                 System.out.print("Enter the number to delete: ");
+                 int NumToDelete = sc.nextInt();
+                 sc.nextLine(); 
+                 System.out.print("Are you sure you want to delete " + NumToDelete + "? (yes/no): ");
+                 String confirmation = sc.nextLine();
+    
+                if (confirmation.equalsIgnoreCase("yes")) {
+                list.deleteByValue(NumToDelete);                     
+                System.out.println(NumToDelete + " deleted.");
+                list.printList();
+                } else {
+                 System.out.println("Deletion canceled.");
+                }
+                break;
              }
          }   
             while (choice != 4 );
