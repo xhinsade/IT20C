@@ -19,5 +19,21 @@ public class Main {
         list.add(40);
         
          list.printList();
+         
+          int choice;
+         do {
+            System.out.println("----------------------------");
+            System.out.println("Choose an option:");
+            System.out.println("1. Add a Node");
+            System.out.println("2. Delete a Node by Value");
+            System.out.println("3. Move a number");
+            System.out.println("4. Exit");
+            System.out.println(" Enter Your Choice: ");
+            choice = sc.nextInt();
+            sc.nextLine(); 
+         }   
+            while (choice != 4 );
+         choice++;
+         
      }
 }
