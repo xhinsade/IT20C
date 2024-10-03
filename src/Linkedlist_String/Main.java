@@ -31,6 +31,15 @@ public class Main {
             System.out.print("Enter Your Choice: ");
             int choice = sc.nextInt();
             sc.nextLine();
+            
+             switch (choice) {
+                case 1:
+                    System.out.print("Enter the song title to add: ");
+                    String songToAdd = sc.nextLine();
+                    list.add(songToAdd);
+                    System.out.println("Song added.");
+                    break;
+             }
         }
     }
 }
