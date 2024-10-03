@@ -31,9 +31,19 @@ public class Main {
             System.out.println(" Enter Your Choice: ");
             choice = sc.nextInt();
             sc.nextLine(); 
+            
+             switch (choice) {
+                case 1:
+                    System.out.print("Enter the number to add: ");
+                    int NumToAdd = sc.nextInt();
+                    list.add(NumToAdd);
+                    System.out.println( NumToAdd + " added.");
+                    list.printList();
+                    break;
+             }
          }   
             while (choice != 4 );
          choice++;
-         
+        
      }
 }
