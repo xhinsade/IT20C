@@ -39,7 +39,21 @@ public class Main {
                     list.add(songToAdd);
                     System.out.println("Song added.");
                     break;
+                    
+                     case 2:
+                    System.out.print("Enter the song title to delete: ");
+                    String songToDelete = sc.nextLine();
+                    System.out.print("Are you sure you want to delete \"" + songToDelete + "\"? (yes/no): ");
+                    String confirmation = sc.nextLine();
+                    if (confirmation.equalsIgnoreCase("yes")) {
+                        list.deleteByValue(songToDelete);
+                        System.out.println("Song deleted.");
+                    } else {
+                        System.out.println("Deletion canceled.");
+                    }
+                    break;
              }
+             
         }
     }
 }
