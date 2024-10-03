@@ -56,6 +56,16 @@ public class Main {
                  System.out.println("Deletion canceled.");
                 }
                 break;
+                
+                 case 3:
+               System.out.print("Enter the current index of the number to move/swap: ");
+                int currentIndex = sc.nextInt();
+                System.out.print("Enter the new index for the number: ");
+                int newIndex = sc.nextInt();
+                list.moveNodePointer(currentIndex, newIndex);
+                System.out.println("Node moved.");
+                list.printList();  
+                break;
              }
          }   
             while (choice != 4 );

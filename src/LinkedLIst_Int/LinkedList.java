@@ -51,4 +51,53 @@ public class LinkedList {
 
             }
         }
+    
+    //,Method use to Move a Node to a new position / swap nodes
+        public void moveNodePointer(int currentIndex, int newIndex) {
+    if (currentIndex == newIndex) {
+        System.out.println("Current index and new index are the same. No movement needed.");
+        return;
+    }
+
+    // Step 1: Find the node at currentIndex and its previous node
+    Node prevNode = null;
+    Node currentNode = head;
+    for (int i = 0; i < currentIndex; i++) {
+        prevNode = currentNode;
+        currentNode = currentNode.next;
+        if (currentNode == null) {
+            System.out.println("Invalid current index.");
+            return;
+        }
+    }
+
+    // Step 2: Remove the node from the current position
+    if (prevNode != null) {
+        prevNode.next = currentNode.next; // Skip the currentNode
+    } else {
+        head = currentNode.next; // The head was removed
+    }
+
+    // Step 3: Insert the node at the new index
+    Node newPrevNode = null;
+    Node newNode = head;
+    for (int i = 0; i < newIndex; i++) {
+        newPrevNode = newNode;
+        newNode = newNode.next;
+        if (newNode == null && i < newIndex - 1) {
+            System.out.println("Invalid new index.");
+            return;
+        }
+    }
+
+    if (newPrevNode != null) {
+        currentNode.next = newNode; // Place it after newPrevNode
+        newPrevNode.next = currentNode;
+    } else {
+        currentNode.next = head;
+        head = currentNode;
+    }
+
+    System.out.println("Node moved from index " + currentIndex + " to " + newIndex);
+ }
 }
