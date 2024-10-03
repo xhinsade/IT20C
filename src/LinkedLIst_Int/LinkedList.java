@@ -20,4 +20,16 @@ public class LinkedList {
         current.next = newNode;
     
     }
+    
+     //Method use to print the linked list
+    public void printList(){
+        Node current = head;
+
+        while(current != null ){
+            System.out.print( current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println( " null ");
+    }
+    
 }
