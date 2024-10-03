@@ -30,4 +30,14 @@ public class LinkedList {
         }
         current.next = newNode;
     }
+    
+     // Method to Print the List of Songs
+    public void ShowList() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
 }

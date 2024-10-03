@@ -16,5 +16,7 @@ public class Main {
         list.add("Sugar");
         list.add("Lil Kasalanan");
         list.add("Walang Alam");
+        
+        list.ShowList();
     }
 }
