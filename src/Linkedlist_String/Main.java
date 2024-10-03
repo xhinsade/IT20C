@@ -16,7 +16,21 @@ public class Main {
         list.add("Sugar");
         list.add("Lil Kasalanan");
         list.add("Walang Alam");
-        
-        list.ShowList();
+        boolean running = true;
+        while (running) {
+            System.out.println("\nCurrent Music List:");
+            System.out.println("----------------------------");
+            list.ShowList();
+
+            System.out.println("----------------------------");
+            System.out.println("Choose an option:");
+            System.out.println("1. Add a song");
+            System.out.println("2. Delete a song");
+            System.out.println("3. Move or Swap a song");
+            System.out.println("4. Exit");
+            System.out.print("Enter Your Choice: ");
+            int choice = sc.nextInt();
+            sc.nextLine();
+        }
     }
 }
