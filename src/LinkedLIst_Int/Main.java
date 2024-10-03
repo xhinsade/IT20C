@@ -66,6 +66,14 @@ public class Main {
                 System.out.println("Node moved.");
                 list.printList();  
                 break;
+                
+                 case 4:
+                   System.out.println(" Exit");
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    break;
+
              }
          }   
             while (choice != 4 );
