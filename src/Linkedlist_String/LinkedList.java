@@ -127,4 +127,5 @@ public class LinkedList {
         newPrevNode.next = node1;
     }
    }
+   
 }

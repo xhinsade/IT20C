@@ -65,9 +65,18 @@ public class Main {
                     System.out.println(swap ? "Songs swapped." : "Song moved.");
                     break;
 
-                   
+                    case 4:
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+
+        sc.close();
+        System.out.println("Goodbye!");
         
         }
-    }
 }
-}
+    
