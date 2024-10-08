@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Stack;
 
-/**
- *
- * @author ITLAB1-PC18-STUDENT
- */
+
 public class Stack {
     
+    private int maxSize;
+    private int [] StackArray;
+    private int top;
+    
+    public Stack(int size){
+        this.maxSize = size;
+        this.StackArray = new int [maxSize];
+        this.top = -1;
+    }
 }
