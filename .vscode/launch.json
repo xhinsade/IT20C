@@ -1,0 +1,77 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Arraylist.Main",
+            "projectName": "IT20C_78717c18"
+        },
+        {
+            "type": "java",
+            "name": "Display_Via_For_Loop",
+            "request": "launch",
+            "mainClass": "DisplayingViaForLoop.Display_Via_For_Loop",
+            "projectName": "IT20C_78717c18"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "LinkedLIst_Int.Main",
+            "projectName": "IT20C_78717c18"
+        },
+        {
+            "type": "java",
+            "name": "Main(2)",
+            "request": "launch",
+            "mainClass": "Linkedlist_String.Main",
+            "projectName": "IT20C_78717c18"
+        },
+        {
+            "type": "java",
+            "name": "Multidimentional_Array",
+            "request": "launch",
+            "mainClass": "Multidimentional_Array.Multidimentional_Array",
+            "projectName": "IT20C_78717c18"
+        },
+        {
+            "type": "java",
+            "name": "Main(3)",
+            "request": "launch",
+            "mainClass": "Practice.Main",
+            "projectName": "IT20C_78717c18"
+        },
+        {
+            "type": "java",
+            "name": "Simple_Implementation",
+            "request": "launch",
+            "mainClass": "Simple_Implementation.Simple_Implementation",
+            "projectName": "IT20C_78717c18"
+        },
+        {
+            "type": "java",
+            "name": "Main(4)",
+            "request": "launch",
+            "mainClass": "Stack.Main",
+            "projectName": "IT20C_78717c18"
+        },
+        {
+            "type": "java",
+            "name": "IT20",
+            "request": "launch",
+            "mainClass": "it20.IT20",
+            "projectName": "IT20C_78717c18"
+        }
+    ]
+}
