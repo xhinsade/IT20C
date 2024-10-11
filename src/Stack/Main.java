@@ -49,6 +49,11 @@ public class Main {
                 case 5: 
                 System.out.println(" Is the stack Full? " + stack.isFull());
                 break;
+
+                case 6:
+                System.out.println(" Display stack size: " + stack.size());
+                break;
+                
         
             default:
                 break;
