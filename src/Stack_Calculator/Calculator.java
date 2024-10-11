@@ -59,54 +59,55 @@ public class Calculator extends javax.swing.JFrame {
 
         two.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         two.setText("2");
-        two.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        two.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(two, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 274, 75, 56));
 
         five.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         five.setText("5");
-        five.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        five.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(five, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 348, 75, 56));
 
         eight.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         eight.setText("8");
-        eight.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        eight.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(eight, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 422, 76, 56));
 
         three.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         three.setText("3");
-        three.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        three.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(three, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 274, 75, 56));
 
         nine.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         nine.setText("9");
-        nine.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        nine.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(nine, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 422, 75, 56));
 
         six.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         six.setText("6");
-        six.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        six.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(six, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 348, 75, 56));
 
         jButton10.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jButton10.setText("=");
-        jButton10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        jButton10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 348, 70, 56));
 
         clear.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         clear.setIcon(new javax.swing.ImageIcon("C:\\Users\\ITLAB1-PC05-STUDENT\\Pictures\\bin (1).png")); // NOI18N
-        clear.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        clear.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 274, 70, 56));
 
         zero.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         zero.setText("0");
-        zero.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        zero.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         jPanel1.add(zero, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 422, 70, 56));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.orange));
 
         jTextField1.setBackground(new java.awt.Color(51, 51, 51));
         jTextField1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.darkGray));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.orange));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -133,15 +134,15 @@ public class Calculator extends javax.swing.JFrame {
 
         one.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         one.setText("1");
-        one.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        one.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
 
         four.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         four.setText("4");
-        four.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        four.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
 
         seven.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         seven.setText("7");
-        seven.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        seven.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -174,7 +175,7 @@ public class Calculator extends javax.swing.JFrame {
 
         addbutton.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         addbutton.setText("+");
-        addbutton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        addbutton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         addbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addbuttonActionPerformed(evt);
@@ -183,11 +184,11 @@ public class Calculator extends javax.swing.JFrame {
 
         substractButton.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         substractButton.setText("-");
-        substractButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        substractButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
 
         DivisionButton.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         DivisionButton.setText("/");
-        DivisionButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        DivisionButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
         DivisionButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DivisionButtonActionPerformed(evt);
@@ -196,7 +197,7 @@ public class Calculator extends javax.swing.JFrame {
 
         multiplyButton.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         multiplyButton.setText("*");
-        multiplyButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        multiplyButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
