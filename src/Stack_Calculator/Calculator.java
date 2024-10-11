@@ -16,28 +16,12 @@ public class Calculator extends javax.swing.JFrame {
     public Calculator() {
         initComponents();
         
-        MainPanel = new javax.swing.JPanel();
-        ButtonPanelNum = new javax.swing.JPanel();
-        one = new javax.swing.JButton();
-        four = new javax.swing.JButton();
-        seven = new javax.swing.JButton();
-        two = new javax.swing.JButton();
-        five = new javax.swing.JButton();
-        eight = new javax.swing.JButton();
-        three = new javax.swing.JButton();
-        nine = new javax.swing.JButton();
-        six = new javax.swing.JButton();
-        equalbutton = new javax.swing.JButton();
-        clear = new javax.swing.JButton();
-        zero = new javax.swing.JButton();
-        backPanelInput = new javax.swing.JPanel();
-        inputBox = new javax.swing.JTextField();
-        backPanelArithmetic = new javax.swing.JPanel();
-        addbutton = new javax.swing.JButton();
-        substractButton = new javax.swing.JButton();
-        DivisionButton = new javax.swing.JButton();
-        multiplyButton = new javax.swing.JButton();
-        
+    }
+    
+     private void setOperator(String op) {
+        firstOperand = Double.parseDouble(inputBox.getText());
+        operator = op;
+        inputBox.setText(""); // Clear display for next number
     }
 
    
@@ -293,6 +277,10 @@ public class Calculator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void appendNumber(String number) {
+        inputBox.setText(inputBox.getText() + number);
+    } 
+    
     private void addbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbuttonActionPerformed
        
     }//GEN-LAST:event_addbuttonActionPerformed
