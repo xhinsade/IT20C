@@ -53,9 +53,14 @@ public class Main {
                 case 6:
                 System.out.println(" Display stack size: " + stack.size());
                 break;
-                
+
+                case 7: 
+                System.out.println(" Exit");
+                running = false;
+                break;
         
             default:
+            System.out.println(" You have enter invalid choice. Please try again.");
                 break;
         }
         }
