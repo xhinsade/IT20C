@@ -41,6 +41,14 @@ public class Main {
                 case 3:
                 System.out.println(" Peek Element : " + stack.peek());
                 break;
+
+                case 4:
+                System.out.println(" Is the stack Empty? " + stack.isEmpty());
+                break;
+
+                case 5: 
+                System.out.println(" Is the stack Full? " + stack.isFull());
+                break;
         
             default:
                 break;
