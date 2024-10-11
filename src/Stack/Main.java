@@ -26,6 +26,17 @@ public class Main {
         System.out.println(" Please select your choice:");
         int choice = sc.nextInt();
 
+        switch (choice) {
+            case 1: 
+            System.out.println(" Enter a value to push");
+            int value = sc.nextInt();
+            stack.push(value);
+                
+                break;
+        
+            default:
+                break;
+        }
         }
 
     }
