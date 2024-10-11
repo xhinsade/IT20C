@@ -16,7 +16,27 @@ public class Calculator extends javax.swing.JFrame {
     public Calculator() {
         initComponents();
         
-        
+        MainPanel = new javax.swing.JPanel();
+        ButtonPanelNum = new javax.swing.JPanel();
+        one = new javax.swing.JButton();
+        four = new javax.swing.JButton();
+        seven = new javax.swing.JButton();
+        two = new javax.swing.JButton();
+        five = new javax.swing.JButton();
+        eight = new javax.swing.JButton();
+        three = new javax.swing.JButton();
+        nine = new javax.swing.JButton();
+        six = new javax.swing.JButton();
+        equalbutton = new javax.swing.JButton();
+        clear = new javax.swing.JButton();
+        zero = new javax.swing.JButton();
+        backPanelInput = new javax.swing.JPanel();
+        inputBox = new javax.swing.JTextField();
+        backPanelArithmetic = new javax.swing.JPanel();
+        addbutton = new javax.swing.JButton();
+        substractButton = new javax.swing.JButton();
+        DivisionButton = new javax.swing.JButton();
+        multiplyButton = new javax.swing.JButton();
         
     }
 
