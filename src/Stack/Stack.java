@@ -5,12 +5,12 @@ package Stack;
 public class Stack {
     
     private int maxSize;
-    private int [] StackArray;
+    private int [] stackArray;
     private int top;
     
     public Stack(int size){
         this.maxSize = size;
-        this.StackArray = new int [maxSize];
+        this.stackArray = new int [maxSize];
         this.top = -1;
     }
     
@@ -31,6 +31,14 @@ public class Stack {
             System.out.println(" The Stack is Full. You can no longer push " + value);
             return;
         }
-        StackArray[++top] = value;
+        stackArray[++top] = value;
+    }
+
+    public int pop(){
+        if (isEmpty()){
+            System.out.println(" Stack is empty. Cannot Pop ");
+            return -1;
+        }
+        return stackArray[top--];
     }
 }

@@ -33,6 +33,10 @@ public class Main {
             stack.push(value);
                 
                 break;
+
+                case 2:
+                System.out.println(" Pop Element: " + stack.pop());
+                break;
         
             default:
                 break;
