@@ -9,19 +9,11 @@ import java.awt.event.ActionListener;
 
 public class Calculator extends javax.swing.JFrame {
 
-    private JTextField inputBox;
-    private String operator = "";
-    private double firstOperand = 0;
-    
+    private JTextField display;
+    private Stack stack;
+
     public Calculator() {
         initComponents();
-        
-    }
-    
-     private void setOperator(String op) {
-        firstOperand = Double.parseDouble(inputBox.getText());
-        operator = op;
-        inputBox.setText(""); // Clear display for next number
     }
 
    
@@ -277,10 +269,6 @@ public class Calculator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void appendNumber(String number) {
-        inputBox.setText(inputBox.getText() + number);
-    } 
-    
     private void addbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbuttonActionPerformed
        
     }//GEN-LAST:event_addbuttonActionPerformed
