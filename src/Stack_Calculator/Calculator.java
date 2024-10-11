@@ -9,20 +9,15 @@ import java.awt.event.ActionListener;
 
 public class Calculator extends javax.swing.JFrame {
 
-    private JTextField display;
+    private JTextField inputBox;
+    private String operator = "";
+    private double firstOperand = 0;
+    
     public Calculator() {
         initComponents();
         
-        display = new JTextField();
-        display.setEditable(false);
-        display.setHorizontalAlignment(JTextField.RIGHT);
         
-        String[] buttons = {
-            "7", "8", "9", "/",
-            "4", "5", "6", "*",
-            "1", "2", "3", "-",
-            "0", "C", "=", "+"
-        };
+        
     }
 
    
