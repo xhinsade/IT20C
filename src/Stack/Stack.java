@@ -36,9 +36,18 @@ public class Stack {
 
     public int pop(){
         if (isEmpty()){
-            System.out.println(" Stack is empty. Cannot Pop ");
+            System.out.println(" Stack is empty. Cannot Pop. ");
             return -1;
         }
         return stackArray[top--];
+    }
+
+    public int peek(){
+        if (isEmpty()){
+            System.out.println("Stack is empty. Cannot Peek.");
+            return -1;
+
+        }
+        return stackArray[top];
     }
 }

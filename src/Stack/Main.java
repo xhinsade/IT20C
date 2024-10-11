@@ -37,6 +37,10 @@ public class Main {
                 case 2:
                 System.out.println(" Pop Element: " + stack.pop());
                 break;
+
+                case 3:
+                System.out.println(" Peek Element : " + stack.peek());
+                break;
         
             default:
                 break;
