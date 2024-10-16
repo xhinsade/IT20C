@@ -52,7 +52,7 @@ public class Calculator extends javax.swing.JFrame {
         addbutton1 = new javax.swing.JButton();
         substractButton1 = new javax.swing.JButton();
         DivisionButton1 = new javax.swing.JButton();
-        multiplyButton2 = new javax.swing.JButton();
+        Delete = new javax.swing.JButton();
         multiplyButton1 = new javax.swing.JButton();
         backPanelInput1 = new javax.swing.JPanel();
         inputBox1 = new javax.swing.JTextField();
@@ -219,12 +219,12 @@ public class Calculator extends javax.swing.JFrame {
             }
         });
 
-        multiplyButton2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        multiplyButton2.setText("*");
-        multiplyButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
-        multiplyButton2.addActionListener(new java.awt.event.ActionListener() {
+        Delete.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        Delete.setText("C");
+        Delete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
+        Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                multiplyButton2ActionPerformed(evt);
+                DeleteActionPerformed(evt);
             }
         });
 
@@ -251,7 +251,7 @@ public class Calculator extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DivisionButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(multiplyButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         backPanelArithmetic1Layout.setVerticalGroup(
@@ -262,7 +262,7 @@ public class Calculator extends javax.swing.JFrame {
                     .addComponent(addbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(substractButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DivisionButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(multiplyButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(multiplyButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -532,6 +532,7 @@ public class Calculator extends javax.swing.JFrame {
     // Convert the number to string and display it in inputBox1
     inputBox1.setText(inputBox1.getText() + number); // Append the number
 }
+    private JTextField deletedField = null;
 
      
     private void one1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_one1ActionPerformed
@@ -589,50 +590,40 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_zero1ActionPerformed
 
     private void addbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbutton1ActionPerformed
-                                         
-   try {
-    // I-split ang text sa inputBox1 gamit ang delimiter (space o comma)
-    String[] numbersStr = inputBox1.getText().split("[ ,]+");
-    
-    // Check kung pila na ka numbers ang anaa sa t1-t5
-    int currentCount = 0;
-
-    if (!t1.getText().isEmpty()) currentCount++;
-    if (!t2.getText().isEmpty()) currentCount++;
-    if (!t3.getText().isEmpty()) currentCount++;
-    if (!t4.getText().isEmpty()) currentCount++;
-    if (!t5.getText().isEmpty()) currentCount++;
-
-    // Kung dili pa lima ka fields ang puno, ipakita ang notification
-    if (currentCount < 5) {
-        JOptionPane.showMessageDialog(this, "Please enter 5 values before adding.");
-        return; // Undangan ang process
+ 
+        try {
+    // Check if all fields (t1 to t5) are filled
+    if (t1.getText().isEmpty() || t2.getText().isEmpty() ||
+        t3.getText().isEmpty() || t4.getText().isEmpty() ||
+        t5.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter 5 values to add.");
+        return; // Stop processing if any field is empty
     }
 
-    // Loop aron ma-add ang mga numero
-    for (String numberStr : numbersStr) {
-        double number = Double.parseDouble(numberStr);
-        
-        // Check kung ang number molapas sa 100
-        if (number > 100) {
-            JOptionPane.showMessageDialog(this, "Please enter values less than or equal to 100.");
-            return; // Undangan ang process
-        }
+    // Retrieve numbers from t1 to t5
+    double num1 = Double.parseDouble(t1.getText());
+    double num2 = Double.parseDouble(t2.getText());
+    double num3 = Double.parseDouble(t3.getText());
+    double num4 = Double.parseDouble(t4.getText());
+    double num5 = Double.parseDouble(t5.getText());
 
-        // Shift values upwards
-        t5.setText(t4.getText());
-        t4.setText(t3.getText());
-        t3.setText(t2.getText());
-        t2.setText(t1.getText());
-        t1.setText(String.valueOf(number)); // Set the new number to t1
-    }
+    // Add the numbers
+    double sum = num1 + num2 + num3 + num4 + num5;
 
-    // Clear the input field for new input
-    inputBox1.setText("");
+    // Display the result in inputBox1
+    inputBox1.setText(String.valueOf(sum)); // Show the sum in inputBox1
+    JOptionPane.showMessageDialog(this, "Sum: " + sum); // Show the sum in a message dialog
 
-} catch (NumberFormatException e) {
-    JOptionPane.showMessageDialog(this, "Please enter valid numbers.");
-       }
+    // Clear all fields
+    t1.setText("");
+    t2.setText("");
+    t3.setText("");
+    t4.setText("");
+    t5.setText("");
+
+     } catch (NumberFormatException e) {
+    JOptionPane.showMessageDialog(this, "Please enter valid numbers in all fields.");
+     }
     }//GEN-LAST:event_addbutton1ActionPerformed
 
     private void substractButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractButton1ActionPerformed
@@ -921,9 +912,48 @@ private void pushNumbersFromInput() {
     
     }//GEN-LAST:event_equalbutton1ActionPerformed
 
-    private void multiplyButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_multiplyButton2ActionPerformed
+
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+    // Check each text field and clear the selected one
+    if (!t1.getText().isEmpty()) {
+        deletedField = t1; // Mark t1 for deletion
+    } else if (!t2.getText().isEmpty()) {
+        deletedField = t2; // Mark t2 for deletion
+    } else if (!t3.getText().isEmpty()) {
+        deletedField = t3; // Mark t3 for deletion
+    } else if (!t4.getText().isEmpty()) {
+        deletedField = t4; // Mark t4 for deletion
+    } else if (!t5.getText().isEmpty()) {
+        deletedField = t5; // Mark t5 for deletion
+    }
+
+    // If a number was deleted, clear the field and prompt for new input
+    if (deletedField != null) {
+        deletedField.setText(""); // Clear the selected field
+
+        // Prompt for a new number
+        String newValueStr = JOptionPane.showInputDialog(this, "Enter a new number:");
+
+        try {
+            double newValue = Double.parseDouble(newValueStr);
+
+            // Check if the new value exceeds 100
+            if (newValue > 100) {
+                JOptionPane.showMessageDialog(this, "Please enter a value less than or equal to 100.");
+                return;
+            }
+
+            // Set the new value in the previously deleted field
+            deletedField.setText(String.valueOf(newValue));
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid number.");
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "No number selected to delete.");
+    }
+    
+    }//GEN-LAST:event_DeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -962,6 +992,7 @@ private void pushNumbersFromInput() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ButtonPanelNum1;
+    private javax.swing.JButton Delete;
     private javax.swing.JButton DivisionButton1;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton Peek;
@@ -979,7 +1010,6 @@ private void pushNumbersFromInput() {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton multiplyButton1;
-    private javax.swing.JButton multiplyButton2;
     private javax.swing.JButton nine1;
     private javax.swing.JButton one1;
     private javax.swing.JButton pop;

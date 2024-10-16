@@ -488,7 +488,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="DivisionButton1" min="-2" pref="77" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="multiplyButton2" min="-2" pref="68" max="-2" attributes="0"/>
+                          <Component id="Delete" min="-2" pref="68" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -501,7 +501,7 @@
                               <Component id="addbutton1" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                               <Component id="substractButton1" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                               <Component id="DivisionButton1" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="multiplyButton2" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="Delete" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                               <Component id="multiplyButton1" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -582,12 +582,12 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DivisionButton1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="multiplyButton2">
+                <Component class="javax.swing.JButton" name="Delete">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Verdana" size="24" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="*"/>
+                    <Property name="text" type="java.lang.String" value="C"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder>
@@ -600,7 +600,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multiplyButton2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="multiplyButton1">
