@@ -752,24 +752,26 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_pushActionPerformed
 
     private void popActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popActionPerformed
-        // Check if the stack is empty (by checking if jTextField3 is empty)
-        if (t5.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Nothing to pop: Stack is empty.");
-            return;
-        }
+       
+    // Check if the top field (t5) is empty
+    if (t5.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Stack is empty. Nothing to pop.");
+        return;
+    }
 
-        // Get the current top value from jTextField3 to show in the message
-        double poppedValue = Double.parseDouble(t5.getText());
+    // Get the value from the top field
+    double poppedValue = Double.parseDouble(t5.getText());
 
         // Show a message with the popped value
         JOptionPane.showMessageDialog(this, "Popped element: " + poppedValue);
 
-        // Shift values downwards
-        t4.setText(t5.getText()); // Move value from jTextField2 to jTextField3 (new top)
-        t3.setText(t4.getText());
-        t2.setText(t3.getText());
-        t1.setText(t2.getText()); // Move value from jTextField1 to jTextField2
-        inputBox1.setText("");
+         // Shift values down
+            t5.setText(t4.getText());
+            t4.setText(t3.getText());
+            t3.setText(t2.getText());
+            t2.setText(t1.getText());
+            t1.setText(""); // Clear the top field
+    
     }//GEN-LAST:event_popActionPerformed
 
     private void PeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PeekActionPerformed
