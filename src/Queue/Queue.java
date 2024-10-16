@@ -5,10 +5,9 @@
  */
 package Queue;
 
-/**
- *
- * @author ITLAB1-PC05-STUDENT
- */
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Queue {
     
 }
