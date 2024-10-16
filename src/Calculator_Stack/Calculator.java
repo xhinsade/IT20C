@@ -5,7 +5,6 @@
  */
 package Calculator_Stack;
 
-import java.awt.LayoutManager;
 import java.util.Stack;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -15,11 +14,15 @@ import javax.swing.JTextField;
  * @author ITLAB1-PC05-STUDENT
  */
 public class Calculator extends javax.swing.JFrame {
-    private JTextField display;
-    
-    private Stack stack;
+   
+   private Stack<Double> stack;
+   
     public Calculator() {
         initComponents();
+        
+        Stack<Double> stack = new Stack<>();
+
+
     }
 
     /**
@@ -155,6 +158,11 @@ public class Calculator extends javax.swing.JFrame {
         equalbutton1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         equalbutton1.setText("=");
         equalbutton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.darkGray, java.awt.Color.orange, java.awt.Color.darkGray));
+        equalbutton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                equalbutton1ActionPerformed(evt);
+            }
+        });
 
         clear1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         clear1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ITLAB1-PC05-STUDENT\\Pictures\\bin (1).png")); // NOI18N
@@ -463,6 +471,12 @@ public class Calculator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void handleNumberButtonClick(int number) {
+    // Convert the number to string and display it in inputBox1
+    inputBox1.setText(inputBox1.getText() + number); // Append the number
+}
+
+     
     private void one1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_one1ActionPerformed
         handleNumberButtonClick(1);
     }//GEN-LAST:event_one1ActionPerformed
@@ -501,7 +515,7 @@ public class Calculator extends javax.swing.JFrame {
 
     private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear1ActionPerformed
         stack.clear(); // Clear the stack
-        clear1.setText(""); // Clear the display
+        inputBox1.setText(" "); // Clear the display
     }//GEN-LAST:event_clear1ActionPerformed
 
     private void zero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zero1ActionPerformed
@@ -509,25 +523,65 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_zero1ActionPerformed
 
     private void addbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbutton1ActionPerformed
-        try {
-            double num1 = t1.getText().isEmpty() ? 0 : Double.parseDouble(t1.getText());
-            double num2 = t2.getText().isEmpty() ? 0 : Double.parseDouble(t2.getText());
-            double num3 = t3.getText().isEmpty() ? 0 : Double.parseDouble(t3.getText());
-            double num4 = t4.getText().isEmpty() ? 0 : Double.parseDouble(t4.getText());
-            double num5 = t5.getText().isEmpty() ? 0 : Double.parseDouble(t5.getText());
+                                         
+    try {
+        // I-split ang text sa inputBox1 gamit ang delimiter (space o comma)
+        String[] numbersStr = inputBox1.getText().split("[ ,]+");
+        
+        // Check kung pila na ka numbers ang anaa sa t1-t5
+        int currentCount = 0;
 
-            double sum = num1 + num2 + num3 + num4 + num5;
+        if (!t1.getText().isEmpty()) currentCount++;
+        if (!t2.getText().isEmpty()) currentCount++;
+        if (!t3.getText().isEmpty()) currentCount++;
+        if (!t4.getText().isEmpty()) currentCount++;
+        if (!t5.getText().isEmpty()) currentCount++;
 
-            // Display the result in a message dialog
-            JOptionPane.showMessageDialog(this, "Sum of the five numbers: " + sum);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Please enter valid numbers in all fields.");
+        // Kung puno na ang lima ka fields, ipakita ang notification
+        if (currentCount >= 5) {
+            JOptionPane.showMessageDialog(this, "Puno na ang mga fields! Dili na makadugang.");
+            return; // Undangan ang process
         }
 
+        // Loop aron ma-add ang mga numero
+        for (String numberStr : numbersStr) {
+            double number = Double.parseDouble(numberStr);
+            
+            // Shift values upwards
+            t5.setText(t4.getText());
+            t4.setText(t3.getText());
+            t3.setText(t2.getText());
+            t2.setText(t1.getText());
+            t1.setText(String.valueOf(number)); // Set the new number to t1
+        }
+
+        // Clear the input field for new input
+        inputBox1.setText("");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga mga numero sa input box.");
+    }
     }//GEN-LAST:event_addbutton1ActionPerformed
 
     private void substractButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractButton1ActionPerformed
 
+         try {
+        double num1 = t1.getText().isEmpty() ? 0 : Double.parseDouble(t1.getText());
+        double num2 = t2.getText().isEmpty() ? 0 : Double.parseDouble(t2.getText());
+        double num3 = t3.getText().isEmpty() ? 0 : Double.parseDouble(t3.getText());
+        double num4 = t4.getText().isEmpty() ? 0 : Double.parseDouble(t4.getText());
+        double num5 = t5.getText().isEmpty() ? 0 : Double.parseDouble(t5.getText());
+
+        double difference = num1 - num2 - num3 - num4 - num5;
+
+        // Display the result in t5
+        t5.setText(String.valueOf(difference));
+
+        // Optionally, push the result onto the stack
+        stack.push(difference);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Please enter valid numbers in all fields.");
+    }
     }//GEN-LAST:event_substractButton1ActionPerformed
 
     private void DivisionButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisionButton1ActionPerformed
@@ -609,6 +663,76 @@ public class Calculator extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PeekActionPerformed
 
+    private void equalbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalbutton1ActionPerformed
+     try {
+        // Kuhaon ang mga numero gikan sa t1 hangtod t5
+        double num1 = t1.getText().isEmpty() ? 0 : Double.parseDouble(t1.getText());
+        double num2 = t2.getText().isEmpty() ? 0 : Double.parseDouble(t2.getText());
+        double num3 = t3.getText().isEmpty() ? 0 : Double.parseDouble(t3.getText());
+        double num4 = t4.getText().isEmpty() ? 0 : Double.parseDouble(t4.getText());
+        double num5 = t5.getText().isEmpty() ? 0 : Double.parseDouble(t5.getText());
+
+        // I-add ang mga numero
+        double sum = num1 + num2 + num3 + num4 + num5;
+
+        // I-display ang resulta sa t5
+        t5.setText(String.valueOf(sum)); // Display the sum in t5
+        JOptionPane.showMessageDialog(this, "Sum: " + sum); // Show the sum in a message dialog
+
+        // I-clear ang tanan fields
+        inputBox1.setText("");
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga mga numero sa t1 hangtod t5.");
+    }
+}
+
+private void pushNumbersFromInput() {
+    try {
+        // I-split ang text sa inputBox1 gamit ang delimiter (space o comma)
+        String[] numbersStr = inputBox1.getText().split("[ ,]+");
+        
+        // Check kung pila na ka numbers ang anaa sa t1-t5
+        int currentCount = 0;
+
+        if (!t1.getText().isEmpty()) currentCount++;
+        if (!t2.getText().isEmpty()) currentCount++;
+        if (!t3.getText().isEmpty()) currentCount++;
+        if (!t4.getText().isEmpty()) currentCount++;
+        if (!t5.getText().isEmpty()) currentCount++;
+
+        // Kung puno na ang lima ka fields, ipakita ang notification
+        if (currentCount >= 5) {
+            JOptionPane.showMessageDialog(this, "Puno na ang mga fields! Dili na makadugang.");
+            return; // Undangan ang process
+        }
+
+        // Loop aron ma-add ang mga numero
+        for (String numberStr : numbersStr) {
+            double number = Double.parseDouble(numberStr);
+            
+            // Shift values upwards
+            t5.setText(t4.getText());
+            t4.setText(t3.getText());
+            t3.setText(t2.getText());
+            t2.setText(t1.getText());
+            t1.setText(String.valueOf(number)); // Set the new number to t1
+        }
+
+        // Clear the input field for new input
+        inputBox1.setText("");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga mga numero sa input box.");
+    }
+    
+    }//GEN-LAST:event_equalbutton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -676,7 +800,6 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton zero1;
     // End of variables declaration//GEN-END:variables
 
-    private void handleNumberButtonClick(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+   
 }
