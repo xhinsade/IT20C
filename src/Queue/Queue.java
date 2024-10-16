@@ -11,4 +11,8 @@ import java.util.Queue;
 public class Queue {
     
      private Queue<Customer> queue;
+     
+      public CustomerQueue() {
+      this.queue = new LinkedList<>();
+      }
 }
