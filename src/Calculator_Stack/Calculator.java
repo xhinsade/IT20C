@@ -539,7 +539,7 @@ public class Calculator extends javax.swing.JFrame {
 
         // Kung puno na ang lima ka fields, ipakita ang notification
         if (currentCount >= 5) {
-            JOptionPane.showMessageDialog(this, "Puno na ang mga fields! Dili na makadugang.");
+            JOptionPane.showMessageDialog(this, "Stack is Full. Cannot Push!!.");
             return; // Undangan ang process
         }
 
@@ -559,7 +559,7 @@ public class Calculator extends javax.swing.JFrame {
         inputBox1.setText("");
 
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga mga numero sa input box.");
+        JOptionPane.showMessageDialog(this, "Please push 5 value.");
     }
     }//GEN-LAST:event_addbutton1ActionPerformed
 
@@ -570,7 +570,7 @@ public class Calculator extends javax.swing.JFrame {
         if (t1.getText().isEmpty() || t2.getText().isEmpty() ||
             t3.getText().isEmpty() || t4.getText().isEmpty() ||
             t5.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Plase push 5 value to to substract.");
+            JOptionPane.showMessageDialog(this, "Please Enter 5 value to to substract.");
             return; // Undang ang process kung naay empty field
         }
 
@@ -597,7 +597,7 @@ public class Calculator extends javax.swing.JFrame {
         t5.setText("");
 
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga mga numero sa t1 hangtod t5.");
+        JOptionPane.showMessageDialog(this, "Please push 5 value.");
     }
  
     }//GEN-LAST:event_substractButton1ActionPerformed
@@ -608,6 +608,46 @@ public class Calculator extends javax.swing.JFrame {
 
     private void multiplyButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyButton1ActionPerformed
 
+          try {
+        // Check kung tanan nga fields (t1 to t5) kay puno
+        if (t1.getText().isEmpty() || t2.getText().isEmpty() ||
+            t3.getText().isEmpty() || t4.getText().isEmpty() ||
+            t5.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Plase push 5 value to multiply.");
+            return; // Undang ang process kung naay empty field
+        }
+
+        // Kuhaon ang mga numero gikan sa t1 hangtod t5
+        double num1 = Double.parseDouble(t1.getText());
+        double num2 = Double.parseDouble(t2.getText());
+        double num3 = Double.parseDouble(t3.getText());
+        double num4 = Double.parseDouble(t4.getText());
+        double num5 = Double.parseDouble(t5.getText());
+
+        // Check if any number exceeds 100
+        if (num1 > 100 || num2 > 100 || num3 > 100 || num4 > 100 || num5 > 100) {
+            JOptionPane.showMessageDialog(this, "Max. number to push: 100 .");
+            return; // Undang ang process kung naay number nga mulapas sa 100
+        }
+
+        // I-multiply ang mga numero
+        double product = num1 * num2 * num3 * num4 * num5;
+
+        // I-display ang resulta sa inputBox1
+        inputBox1.setText(String.valueOf(product)); // Display the product in inputBox1
+        JOptionPane.showMessageDialog(this, "Product: " + product); // Show the product in a message dialog
+
+        // I-clear ang tanan fields
+        inputBox1.setText("");
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Please push 5 value.");
+    }
     }//GEN-LAST:event_multiplyButton1ActionPerformed
 
     private void t3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t3ActionPerformed
@@ -629,7 +669,7 @@ public class Calculator extends javax.swing.JFrame {
 
         // Kung puno na ang lima ka fields, ipakita ang notification
         if (currentCount >= 5) {
-            JOptionPane.showMessageDialog(this, "Puno na ang mga fields! Dili na makadugang.");
+            JOptionPane.showMessageDialog(this, "Stack is Full. Cannot Push!!.");
             return; // Undangan ang process
         }
 
@@ -644,7 +684,7 @@ public class Calculator extends javax.swing.JFrame {
         inputBox1.setText("");
 
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga numero sa input box.");
+        JOptionPane.showMessageDialog(this, "Please push 5 value to Stack .");
     }
     }//GEN-LAST:event_pushActionPerformed
 
@@ -706,7 +746,7 @@ public class Calculator extends javax.swing.JFrame {
         t5.setText("");
 
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga mga numero sa t1 hangtod t5.");
+        JOptionPane.showMessageDialog(this, "Please push 5 value.");
     }
 }
 
@@ -726,7 +766,7 @@ private void pushNumbersFromInput() {
 
         // Kung puno na ang lima ka fields, ipakita ang notification
         if (currentCount >= 5) {
-            JOptionPane.showMessageDialog(this, "Puno na ang mga fields! Dili na makadugang.");
+            JOptionPane.showMessageDialog(this, "Stack is Full. Cannot Push!! ");
             return; // Undangan ang process
         }
 
@@ -746,7 +786,7 @@ private void pushNumbersFromInput() {
         inputBox1.setText("");
 
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga mga numero sa input box.");
+        JOptionPane.showMessageDialog(this, "Please push 5 value.");
     }
     
     }//GEN-LAST:event_equalbutton1ActionPerformed
