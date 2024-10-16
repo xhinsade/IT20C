@@ -5,10 +5,8 @@
  */
 package Queue;
 
-/**
- *
- * @author ITLAB1-PC05-STUDENT
- */
+import java.util.Scanner;
+
 public class Main {
 
     /**
