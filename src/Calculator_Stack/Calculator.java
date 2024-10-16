@@ -514,8 +514,17 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_six1ActionPerformed
 
     private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear1ActionPerformed
-        stack.clear(); // Clear the stack
-        inputBox1.setText(" "); // Clear the display
+        // Clear all input fields
+    inputBox1.setText("");
+    t1.setText("");
+    t2.setText("");
+    t3.setText("");
+    t4.setText("");
+    t5.setText("");
+
+    // Optional: You can also show a message indicating that the fields have been cleared
+    JOptionPane.showMessageDialog(this, "All fields have been cleared.");
+    
     }//GEN-LAST:event_clear1ActionPerformed
 
     private void zero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zero1ActionPerformed
