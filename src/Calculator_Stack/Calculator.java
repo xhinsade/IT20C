@@ -773,15 +773,17 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_popActionPerformed
 
     private void PeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PeekActionPerformed
-        // Check if jTextField5 is empty before trying to peek
-        if (t5.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Stack is empty, nothing to peek.");
-        } else {
-            // Safely parse the top value from jTextField5
-            double topValue = Double.parseDouble(t5.getText());
-            // Display the top value in a JOptionPane message
-            JOptionPane.showMessageDialog(this, "Top item of the stack: " + topValue);
-        }
+       
+    // Check if the top field (t5) is empty
+    if (t5.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Stack is empty. Nothing to peek.");
+    } else {
+        // Get the value from the top field
+        double topValue = Double.parseDouble(t5.getText());
+        
+        // Display the peeked value
+        JOptionPane.showMessageDialog(this, "Top item of the stack: " + topValue);
+    }
     }//GEN-LAST:event_PeekActionPerformed
 
     private void equalbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalbutton1ActionPerformed
