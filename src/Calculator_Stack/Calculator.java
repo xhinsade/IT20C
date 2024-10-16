@@ -676,7 +676,7 @@ public class Calculator extends javax.swing.JFrame {
         double sum = num1 + num2 + num3 + num4 + num5;
 
         // I-display ang resulta sa t5
-        t5.setText(String.valueOf(sum)); // Display the sum in t5
+        inputBox1.setText(String.valueOf(sum)); // Display the sum in inputBox1
         JOptionPane.showMessageDialog(this, "Sum: " + sum); // Show the sum in a message dialog
 
         // I-clear ang tanan fields
