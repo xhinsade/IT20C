@@ -703,37 +703,43 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_t3ActionPerformed
 
     private void pushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pushActionPerformed
-        try {
-        // Kuhaon ang value gikan sa inputBox1
-        double value = Double.parseDouble(inputBox1.getText());
+       try {
+    // Kuhaon ang value gikan sa inputBox1
+    double value = Double.parseDouble(inputBox1.getText());
 
-        // Check kung pila na ka filled nga fields sa t1-t5
-        int currentCount = 0;
-        if (!t1.getText().isEmpty()) currentCount++;
-        if (!t2.getText().isEmpty()) currentCount++;
-        if (!t3.getText().isEmpty()) currentCount++;
-        if (!t4.getText().isEmpty()) currentCount++;
-        if (!t5.getText().isEmpty()) currentCount++;
-
-        // Kung puno na ang lima ka fields, ipakita ang notification
-        if (currentCount >= 5) {
-            JOptionPane.showMessageDialog(this, "Stack is Full. Cannot Push!!.");
-            return; // Undangan ang process
-        }
-
-        // Shift values upwards
-        t5.setText(t4.getText());
-        t4.setText(t3.getText());
-        t3.setText(t2.getText());
-        t2.setText(t1.getText());
-        t1.setText(String.valueOf(value)); // Set the new number to t1
-
-        // Clear the input field
-        inputBox1.setText("");
-
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Please push 5 value to Stack .");
+    // Check kung ang value kay labaw sa 100
+    if (value > 100) {
+        JOptionPane.showMessageDialog(this, "The value must not exceed 100.");
+        return; // Undangan ang process kung labaw sa 100
     }
+
+    // Check kung pila na ka filled nga fields sa t1-t5
+    int currentCount = 0;
+    if (!t1.getText().isEmpty()) currentCount++;
+    if (!t2.getText().isEmpty()) currentCount++;
+    if (!t3.getText().isEmpty()) currentCount++;
+    if (!t4.getText().isEmpty()) currentCount++;
+    if (!t5.getText().isEmpty()) currentCount++;
+
+    // Kung puno na ang lima ka fields, ipakita ang notification
+    if (currentCount >= 5) {
+        JOptionPane.showMessageDialog(this, "Stack is Full. Cannot Push!!.");
+        return; // Undangan ang process
+    }
+
+    // Shift values upwards
+    t5.setText(t4.getText());
+    t4.setText(t3.getText());
+    t3.setText(t2.getText());
+    t2.setText(t1.getText());
+    t1.setText(String.valueOf(value)); // Set the new number to t1
+
+    // Clear the input field
+    inputBox1.setText("");
+
+} catch (NumberFormatException e) {
+    JOptionPane.showMessageDialog(this, "Please enter a valid number to push to the stack.");
+}
     }//GEN-LAST:event_pushActionPerformed
 
     private void popActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popActionPerformed
