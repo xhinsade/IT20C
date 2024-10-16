@@ -1,26 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Queue;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Queue {
-private Queue<Customer> queue;
-     
-     public Queue () {
-      this.queue = new LinkedList<>();
-      }
-      
-      public void enqueue(Customer customer) {
+public class CustomerQueue {
+    private Queue<Customer> queue;
+
+    public CustomerQueue() {
+        this.queue = new LinkedList<>();
+    }
+
+    public void enqueue(Customer customer) {
         queue.add(customer);
         System.out.println(customer.getName() + " has joined the queue.");
     }
-      
-       public Customer dequeue() {
+
+    public Customer dequeue() {
         if (!queue.isEmpty()) {
             Customer customer = queue.poll();
             System.out.println(customer.getName() + " has been served and left the queue.");
@@ -30,8 +23,8 @@ private Queue<Customer> queue;
             return null;
         }
     }
-       
-       public void displayQueue() {
+
+    public void displayQueue() {
         if (queue.isEmpty()) {
             System.out.println("The queue is currently empty.");
         } else {
