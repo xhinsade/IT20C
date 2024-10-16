@@ -19,4 +19,15 @@ private Queue<Customer> queue;
         queue.add(customer);
         System.out.println(customer.getName() + " has joined the queue.");
     }
+      
+       public Customer dequeue() {
+        if (!queue.isEmpty()) {
+            Customer customer = queue.poll();
+            System.out.println(customer.getName() + " has been served and left the queue.");
+            return customer;
+        } else {
+            System.out.println("The queue is empty.");
+            return null;
+        }
+    }
 }
