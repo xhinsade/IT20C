@@ -11,6 +11,10 @@ package Queue;
  */
 public class Customer {
     
-    private String name;
-    
-}
+    private String name;   
+
+
+  public Customer(String name) {
+        this.name = name;
+     } 
+  }
