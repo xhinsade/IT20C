@@ -570,7 +570,7 @@ public class Calculator extends javax.swing.JFrame {
         if (t1.getText().isEmpty() || t2.getText().isEmpty() ||
             t3.getText().isEmpty() || t4.getText().isEmpty() ||
             t5.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please Enter 5 value to to substract.");
+            JOptionPane.showMessageDialog(this, "Please Enter 5 value to substract.");
             return; // Undang ang process kung naay empty field
         }
 
@@ -604,6 +604,54 @@ public class Calculator extends javax.swing.JFrame {
 
     private void DivisionButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisionButton1ActionPerformed
 
+         try {
+        // Check kung tanan nga fields (t1 to t5) kay puno
+        if (t1.getText().isEmpty() || t2.getText().isEmpty() ||
+            t3.getText().isEmpty() || t4.getText().isEmpty() ||
+            t5.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please Enter 5 values to divide.");
+            return; // Undang ang process kung naay empty field
+        }
+
+        // Kuhaon ang mga numero gikan sa t1 hangtod t5
+        double num1 = Double.parseDouble(t1.getText());
+        double num2 = Double.parseDouble(t2.getText());
+        double num3 = Double.parseDouble(t3.getText());
+        double num4 = Double.parseDouble(t4.getText());
+        double num5 = Double.parseDouble(t5.getText());
+
+        // Check kung ang bisan unsa nga numero molapas sa 100
+        if (num1 > 100 || num2 > 100 || num3 > 100 || num4 > 100 || num5 > 100) {
+            JOptionPane.showMessageDialog(this, "All numbers must be 100 or less.");
+            return; // Undang ang process kung naay molapas sa 100
+        }
+
+        // Check kung ang first number kay zero
+        if (num1 == 0) {
+            JOptionPane.showMessageDialog(this, "Cannot divide by Zero.");
+            return; // Undang ang process kung zero ang first number
+        }
+
+        // I-divide ang mga numero
+        double result = num1 / num2 / num3 / num4 / num5;
+
+        // I-display ang resulta sa inputBox1
+        inputBox1.setText(String.valueOf(result)); // Display the result in inputBox1
+        JOptionPane.showMessageDialog(this, "Result: " + result); // Show the result in a message dialog
+
+        // I-clear ang tanan fields
+        inputBox1.setText("");
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Please enter valid numbers in all fields.");
+    } catch (ArithmeticException e) {
+        JOptionPane.showMessageDialog(this, "Error: Division by zero.");
+    }
     }//GEN-LAST:event_DivisionButton1ActionPerformed
 
     private void multiplyButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyButton1ActionPerformed
