@@ -10,4 +10,5 @@ import java.util.Queue;
 
 public class Queue {
     
+     private Queue<Customer> queue;
 }
