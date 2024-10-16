@@ -11,4 +11,6 @@ package Queue;
  */
 public class Customer {
     
+    private String name;
+    
 }
