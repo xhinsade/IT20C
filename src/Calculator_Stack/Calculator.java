@@ -570,7 +570,7 @@ public class Calculator extends javax.swing.JFrame {
         if (t1.getText().isEmpty() || t2.getText().isEmpty() ||
             t3.getText().isEmpty() || t4.getText().isEmpty() ||
             t5.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Palihug pun-a ang tanan nga fields (t1 hangtod t5) una sa pag-subtract.");
+            JOptionPane.showMessageDialog(this, "Plase push 5 value to to substract.");
             return; // Undang ang process kung naay empty field
         }
 
