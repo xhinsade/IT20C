@@ -9,10 +9,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Queue {
-    
-     private Queue<Customer> queue;
+private Queue<Customer> queue;
      
-      public CustomerQueue() {
+     public Queue () {
       this.queue = new LinkedList<>();
       }
+      
+      public void enqueue(Customer customer) {
+        queue.add(customer);
+        System.out.println(customer.getName() + " has joined the queue.");
+    }
 }
