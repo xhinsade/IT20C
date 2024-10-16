@@ -564,24 +564,42 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_addbutton1ActionPerformed
 
     private void substractButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractButton1ActionPerformed
+  
+        try {
+        // Check kung tanan nga fields (t1 to t5) kay puno
+        if (t1.getText().isEmpty() || t2.getText().isEmpty() ||
+            t3.getText().isEmpty() || t4.getText().isEmpty() ||
+            t5.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Palihug pun-a ang tanan nga fields (t1 hangtod t5) una sa pag-subtract.");
+            return; // Undang ang process kung naay empty field
+        }
 
-         try {
-        double num1 = t1.getText().isEmpty() ? 0 : Double.parseDouble(t1.getText());
-        double num2 = t2.getText().isEmpty() ? 0 : Double.parseDouble(t2.getText());
-        double num3 = t3.getText().isEmpty() ? 0 : Double.parseDouble(t3.getText());
-        double num4 = t4.getText().isEmpty() ? 0 : Double.parseDouble(t4.getText());
-        double num5 = t5.getText().isEmpty() ? 0 : Double.parseDouble(t5.getText());
+        // Kuhaon ang mga numero gikan sa t1 hangtod t5
+        double num1 = Double.parseDouble(t1.getText());
+        double num2 = Double.parseDouble(t2.getText());
+        double num3 = Double.parseDouble(t3.getText());
+        double num4 = Double.parseDouble(t4.getText());
+        double num5 = Double.parseDouble(t5.getText());
 
+        // I-subtract ang mga numero
         double difference = num1 - num2 - num3 - num4 - num5;
 
-        // Display the result in t5
-        t5.setText(String.valueOf(difference));
+        // I-display ang resulta sa inputBox1
+        inputBox1.setText(String.valueOf(difference)); // Display the difference in inputBox1
+        JOptionPane.showMessageDialog(this, "Difference: " + difference); // Show the difference in a message dialog
 
-        // Optionally, push the result onto the stack
-        stack.push(difference);
+        // I-clear ang tanan fields
+        inputBox1.setText("");
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Please enter valid numbers in all fields.");
+        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga mga numero sa t1 hangtod t5.");
     }
+ 
     }//GEN-LAST:event_substractButton1ActionPerformed
 
     private void DivisionButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisionButton1ActionPerformed
@@ -598,36 +616,36 @@ public class Calculator extends javax.swing.JFrame {
 
     private void pushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pushActionPerformed
         try {
-            // Get user input from inputBox
-            double value = Double.parseDouble(inputBox1.getText());
+        // Kuhaon ang value gikan sa inputBox1
+        double value = Double.parseDouble(inputBox1.getText());
 
-            // Check if all fields are filled
-            if (!inputBox1.getText().isEmpty() &&
-                !t1.getText().isEmpty() &&
-                !t2.getText().isEmpty() &&
-                !t3.getText().isEmpty() &&
-                !t4.getText().isEmpty() &&
-                !t5.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Cannot push: All fields are full!");
-                inputBox1.setText("");  // Clear jTextField4 if unable to push
-                return;
-            }
-            // Shift values upwards
-            t1.setText(t2.getText());
-            t2.setText(t3.getText());
-            t3.setText(t4.getText());
-            t4.setText(t5.getText());
-            t5.setText(String.valueOf(value));  // Display new value in jTextField5
+        // Check kung pila na ka filled nga fields sa t1-t5
+        int currentCount = 0;
+        if (!t1.getText().isEmpty()) currentCount++;
+        if (!t2.getText().isEmpty()) currentCount++;
+        if (!t3.getText().isEmpty()) currentCount++;
+        if (!t4.getText().isEmpty()) currentCount++;
+        if (!t5.getText().isEmpty()) currentCount++;
 
-            // Push the value onto the stack
-            stack.push(value);  // Only the value pushed from jTextField4 should go to the stack
-
-            // Clear the input field for new input
-            inputBox1.setText("");
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid number.");
+        // Kung puno na ang lima ka fields, ipakita ang notification
+        if (currentCount >= 5) {
+            JOptionPane.showMessageDialog(this, "Puno na ang mga fields! Dili na makadugang.");
+            return; // Undangan ang process
         }
+
+        // Shift values upwards
+        t5.setText(t4.getText());
+        t4.setText(t3.getText());
+        t3.setText(t2.getText());
+        t2.setText(t1.getText());
+        t1.setText(String.valueOf(value)); // Set the new number to t1
+
+        // Clear the input field
+        inputBox1.setText("");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Palihug isul ang valid nga numero sa input box.");
+    }
     }//GEN-LAST:event_pushActionPerformed
 
     private void popActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popActionPerformed
