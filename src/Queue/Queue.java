@@ -30,4 +30,15 @@ private Queue<Customer> queue;
             return null;
         }
     }
+       
+       public void displayQueue() {
+        if (queue.isEmpty()) {
+            System.out.println("The queue is currently empty.");
+        } else {
+            System.out.println("Current queue:");
+            for (Customer customer : queue) {
+                System.out.println("- " + customer.getName());
+            }
+        }
+    }
 }
