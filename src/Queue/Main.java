@@ -17,6 +17,15 @@ public class Main {
         CustomerQueue customerQueue = new CustomerQueue();
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
+
+        System.out.println("\nMenu:");
+            System.out.println("1. Add customer to queue");
+            System.out.println("2. Serve customer");
+            System.out.println("3. Display queue");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
         
     }
     
