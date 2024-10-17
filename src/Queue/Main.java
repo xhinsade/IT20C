@@ -17,7 +17,8 @@ public class Main {
         CustomerQueue customerQueue = new CustomerQueue();
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
-
+        
+        while (!exit) {
         System.out.println("\nMenu:");
             System.out.println("1. Add customer to queue");
             System.out.println("2. Serve customer");
@@ -40,8 +41,14 @@ public class Main {
                 case 3:
                     customerQueue.displayQueue();
                     break;
+                case 4:
+                    exit = true;
+                    System.out.println("Exit");
+                    break;
+              }
 
         }
+        scanner.close();
         
     }
     
