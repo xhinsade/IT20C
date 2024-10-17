@@ -29,6 +29,12 @@ public class Main {
 
         switch (choice) {
 
+                case 1:
+                    System.out.print("Enter customer name: ");
+                    String name = scanner.nextLine();
+                    customerQueue.enqueue(new Customer(name));
+                    break;
+
         }
         
     }
