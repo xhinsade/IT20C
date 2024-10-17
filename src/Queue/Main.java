@@ -19,7 +19,7 @@ public class Main {
         boolean exit = false;
         
         while (!exit) {
-        System.out.println("\nMenu:");
+        System.out.println("  Menu:  ");
             System.out.println("1. Add customer to queue");
             System.out.println("2. Serve customer");
             System.out.println("3. Display queue");
@@ -45,6 +45,9 @@ public class Main {
                     exit = true;
                     System.out.println("Exit");
                     break;
+                default:
+                    System.out.println("Invalid option, please try again.");
+            
               }
 
         }
