@@ -37,6 +37,9 @@ public class Main {
                 case 2:
                     customerQueue.dequeue();
                     break;
+                case 3:
+                    customerQueue.displayQueue();
+                    break;
 
         }
         
