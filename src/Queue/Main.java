@@ -34,6 +34,9 @@ public class Main {
                     String name = scanner.nextLine();
                     customerQueue.enqueue(new Customer(name));
                     break;
+                case 2:
+                    customerQueue.dequeue();
+                    break;
 
         }
         
