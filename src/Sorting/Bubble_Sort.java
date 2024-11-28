@@ -34,5 +34,19 @@ public static void main(String[] args) {
         System.out.println("Enter the elements of the array:");
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
+            
         }
     
+    System.out.println("Original array:");
+        printArray(arr);
+
+        // Perform bubble sort
+        bubbleSort(arr);
+
+        System.out.println("Sorted array:");
+        printArray(arr);
+
+        scanner.close();
+    }
+}
+
