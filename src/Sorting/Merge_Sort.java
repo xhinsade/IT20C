@@ -48,7 +48,7 @@ public class Merge_Sort {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Input the size of the array
+          // Input the size of the array
         System.out.print("Enter the number of elements in the array: ");
         int n = scanner.nextInt();
 
@@ -62,11 +62,21 @@ public class Merge_Sort {
         System.out.println("Original array:");
         printArray(arr);
 
+        // Start the timer
+        long startTime = System.currentTimeMillis();
+
         // Perform merge sort
         mergeSort(arr);
 
+        // End the timer
+        long endTime = System.currentTimeMillis();
+
         System.out.println("Sorted array:");
         printArray(arr);
+
+        // Calculate and print the runtime
+        long duration = endTime - startTime;
+        System.out.println("Sorting completed in: " + duration + " milliseconds");
 
         scanner.close();
     }
