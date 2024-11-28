@@ -35,3 +35,17 @@ public class Insertion_Sort {
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
+
+                System.out.println("Original array:");
+        printArray(arr);
+
+        // Perform insertion sort
+        insertionSort(arr);
+
+        System.out.println("Sorted array:");
+        printArray(arr);
+
+        scanner.close();
+    }
+}
+
