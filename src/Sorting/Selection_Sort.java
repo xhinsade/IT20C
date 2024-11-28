@@ -27,6 +27,7 @@ public static void printArray(int[] arr) {
 public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        
         // Input the size of the array
         System.out.print("Enter the number of elements in the array: ");
         int n = scanner.nextInt();
@@ -41,11 +42,21 @@ public static void main(String[] args) {
         System.out.println("Original array:");
         printArray(arr);
 
+        // Start the timer
+        long startTime = System.currentTimeMillis();
+
         // Perform selection sort
         selectionSort(arr);
 
+        // End the timer
+        long endTime = System.currentTimeMillis();
+
         System.out.println("Sorted array:");
         printArray(arr);
+
+        // Calculate and print the runtime
+        long duration = endTime - startTime;
+        System.out.println("Sorting completed in: " + duration + " milliseconds");
 
         scanner.close();
     }
