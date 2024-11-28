@@ -36,16 +36,25 @@ public class Insertion_Sort {
             arr[i] = scanner.nextInt();
         }
 
-                System.out.println("Original array:");
+        System.out.println("Original array:");
         printArray(arr);
+
+        // Start the timer
+        long startTime = System.currentTimeMillis();
 
         // Perform insertion sort
         insertionSort(arr);
 
+        // End the timer
+        long endTime = System.currentTimeMillis();
+
         System.out.println("Sorted array:");
         printArray(arr);
+
+        // Calculate and print the runtime
+        long duration = endTime - startTime;
+        System.out.println("Sorting completed in: " + duration + " milliseconds");
 
         scanner.close();
     }
 }
-
