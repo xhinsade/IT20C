@@ -57,11 +57,21 @@ public static void main(String[] args) {
         System.out.println("Original array:");
         printArray(arr);
 
+        // Start the timer
+        long startTime = System.currentTimeMillis();
+
         // Perform quick sort
         quickSort(arr, 0, arr.length - 1);
 
+        // End the timer
+        long endTime = System.currentTimeMillis();
+
         System.out.println("Sorted array:");
         printArray(arr);
+
+        // Calculate and print the runtime
+        long duration = endTime - startTime;
+        System.out.println("Sorting completed in: " + duration + " milliseconds");
 
         scanner.close();
     }
