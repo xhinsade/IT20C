@@ -34,19 +34,32 @@ public static void main(String[] args) {
         System.out.println("Enter the elements of the array:");
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
-            
         }
-    
-    System.out.println("Original array:");
+
+        System.out.println("Original array:");
         printArray(arr);
+
+        // Start the timer
+        long startTime = System.currentTimeMillis();
 
         // Perform bubble sort
         bubbleSort(arr);
 
+        // End the timer
+        long endTime = System.currentTimeMillis();
+
         System.out.println("Sorted array:");
         printArray(arr);
+
+        // Calculate and print the runtime
+        long duration = endTime - startTime;
+        System.out.println("Sorting completed in: " + duration + " milliseconds");
 
         scanner.close();
     }
 }
+
+
+
+
 
